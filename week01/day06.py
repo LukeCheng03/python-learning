@@ -47,20 +47,55 @@ def honor_students(students):
             honors.append(student)
     return honors
 
+def format_highest_student(students):
+    """
+    Helper function: formatting and displaying the student with highest GPA.
+    students: list[Student]
+    """
+    message = ""
+    message += "Highest GPA Student:\n"
+    highest = highest_gpa(students)
+    message += f"{highest.name} ({highest.gpa:.1f})"
+    return message
+
+def format_average_gpa(students):
+    """
+    Helper function: formatting and displaying the average GPA.
+    student: list[Student]
+    """
+    message = ""
+    message += "Average GPA:\n"
+    message += f"{average_gpa(students):.1f}"
+    return message
+
+def format_honor_students(students):
+    """
+    Helper function: formatting and displaying honor students(equal or greater than 3.7).
+    students: list[Student]
+    """
+    message = ""
+    message += "Honor Students(GPA no less than 3.7):\n"
+    honors = honor_students(students)
+    for student in honors:
+        message += f"{student.name} ({student.gpa})\n"
+    return message
+
 def student_report(students):
     """
     Report student data.
     students: list[Student]
     """
     message = ""
-    message += "Highest GPA Student:\n"
-    message += f"{highest_gpa(students).name} ({highest_gpa(students).gpa})\n\n"
-    message += "Average GPA:\n"
-    message += f"{average_gpa(students):.1f}\n\n"
 
-    honors = honor_students(students)
-    for student in honors:
-        message += f"{student.name} ({student.gpa})\n"
+    message += format_highest_student(students)
+    message += "\n\n"
+
+    message += format_average_gpa(students)
+    message += "\n\n"
+
+    message += format_honor_students(students)
+    message += "\n\n"
+
     return message
 
 print(student_report(load_students("week01/students.txt")))
