@@ -1,10 +1,25 @@
-<<<<<<< HEAD
-# Python Study 2026 Summer
+# Student Data Analyzer
 
-My Python learning journey toward Data Science.
+A beginner Python project for analyzing student data.
 
-Author: Luke Cheng
-=======
-# python-learning
-Python practice, notes, and projects for Data Science.
->>>>>>> 54af02c722ec5d261c8026e26c917e92f91a88df
+## Features
+
+- Load student records from a text file
+- Find the student with the highest GPA
+- Calculate average GPA
+- Count students by major
+- Identify honor students
+
+## Technologies
+
+- Python
+- NamedTuple
+- File I/O
+- Functions
+- Git & GitHub
+
+## Author
+
+Luke Cheng
+University of California, Irvine
+Quantitative Economics
